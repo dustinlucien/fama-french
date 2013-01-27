@@ -1,0 +1,82 @@
+My Run (IVV only):
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0201715 -0.0025392  0.0002439  0.0022879  0.0174021 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.0005852  0.0003674  -1.593  0.11335    
+rmrf         0.9840431  0.0081399 120.891  < 2e-16 ***
+smb         -0.1259087  0.0137151  -9.180 3.85e-16 ***
+hml          0.0343502  0.0111731   3.074  0.00252 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Residual standard error: 0.004381 on 146 degrees of freedom
+Multiple R-squared: 0.9911,	Adjusted R-squared: 0.9909 
+F-statistic:  5400 on 3 and 146 DF,  p-value: < 2.2e-16 
+
+The Original (IVV only): 
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0202282 -0.0025829  0.0001808  0.0021524  0.0179704 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.0006536  0.0004093  -1.597  0.11303    
+rmrf         0.9832411  0.0087401 112.498  < 2e-16 ***
+smb         -0.1094086  0.0154466  -7.083 1.17e-10 ***
+hml          0.0322483  0.0121643   2.651  0.00915 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Residual standard error: 0.004338 on 116 degrees of freedom
+Multiple R-squared: 0.9918,	Adjusted R-squared: 0.9916 
+F-statistic:  4678 on 3 and 116 DF,  p-value: < 2.2e-16 
+
+Our current portfolio (All stocks):
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0255039 -0.0052123 -0.0002198  0.0040808  0.0259692 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.000765   0.000956  -0.800    0.426    
+rmrf         1.048963   0.023011  45.585  < 2e-16 ***
+smb         -0.228898   0.047089  -4.861 5.64e-06 ***
+hml          0.170102   0.039909   4.262 5.43e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Residual standard error: 0.008762 on 81 degrees of freedom
+Multiple R-squared: 0.9723,	Adjusted R-squared: 0.9713 
+F-statistic:   947 on 3 and 81 DF,  p-value: < 2.2e-16
+
+The complex proposed portfolio (NOT ENOUGH DATA!):
+Call:
+lm(formula = rjrf ~ rmrf + smb + hml)
+
+Residuals:
+ Mar 2012  Apr 2012  May 2012  Jun 2012  Jul 2012  Aug 2012  Sep 2012  Oct 2012 
+-0.073510  0.011846 -0.024709  0.007388  0.015859 -0.013477  0.020167  0.007951 
+ Nov 2012 
+ 0.048487 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept) -0.02530    0.01643  -1.540  0.18429   
+rmrf         3.33535    0.51218   6.512  0.00128 **
+smb          0.60583    1.48314   0.408  0.69983   
+hml          1.59606    1.05212   1.517  0.18971   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Residual standard error: 0.0435 on 5 degrees of freedom
+Multiple R-squared: 0.9057,	Adjusted R-squared: 0.8492 
+F-statistic: 16.01 on 3 and 5 DF,  p-value: 0.005369 
+
+The simple proposed portfolio:
+
