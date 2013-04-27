@@ -1,3 +1,6 @@
 .DS_Store
 .Rhistory
 .Rdata
+
+# Example code in package build process
+*-Ex.R
