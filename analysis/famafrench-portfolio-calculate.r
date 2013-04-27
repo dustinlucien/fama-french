@@ -8,7 +8,7 @@ portfolio_file <- NULL
 
 args <- commandArgs(TRUE);
 if (length(args) < 1) {
-	portfolio_file <- '../data/portfolio/test-simple-portfolio.csv';
+	portfolio_file <- '../data/portfolio/alison-ira-allocation.csv';
 } else {
 	batch_args <- read.table(args[1], sep = ",");
 	portfolio_file <- batch_args[1];
@@ -21,14 +21,16 @@ portfolio <- read.csv(portfolio_file);
 start_date_string <- "1990-11-01";
 end_date_string <- "2012-11-30";
 
-ff_returns <- read.table("../data/fama-french/F-F_Research_Data_Factors-monthly.txt", header = TRUE);
+ff_returns <- read.table("../data/fama-french/Global_Factors-monthly.txt", header = TRUE);
 
 #hackish way to get the french data dates in a workable monthly form
-ff_returns[[1]] <- paste(ff_returns[[1]], '01', sep = "-");
-ff_returns[[1]] <- strptime(ff_returns[[1]], '%Y%m-%d');
-ff_returns[[1]] <- as.yearmon(ff_returns[[1]]);
+returns.Date <- paste(ff_returns$Date, '01', sep = "-");
+ff_returns$Date <- NULL;
 
-ff_returns <- zoo(ff_returns[2:5], ff_returns$Date);
+returns.Date <- strptime(returns.Date, '%Y%m-%d');
+returns.Date <- as.yearmon(returns.Date);
+
+ff_returns <- zoo(ff_returns, returns.Date);
 
 rmrf <- ff_returns$RMRF/100;
 smb <- ff_returns$SMB/100;
